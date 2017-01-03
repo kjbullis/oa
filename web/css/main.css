@@ -1,0 +1,158 @@
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: url("../images/photoByGordonHattonGrey.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+#inner-shadow {
+	box-shadow: inset 0 0 3vh black;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+}
+
+.shadow {
+	position: absolute;
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 1vh inset;
+	text-align: center;
+	vertical-align: middle;
+}
+.shadow:hover {
+	box-shadow: inset 0 0 0.25vh black;
+}
+.shadow img {
+	width: 15vh;
+	height: 15vh;
+	position: relative;
+	z-index: -1;
+	border-radius: 50%;
+	box-shadow: 0px 0px 1vh rgba(0, 0, 0, 0.8) ;
+}
+
+#companyName {
+	position: fixed;
+	top: 60vh;
+	left: 50vw;
+	transform: translate(-50%, 0);
+	z-index: 1002;
+	text-align: center;
+	font-size: 4vh;
+}
+
+.dot {
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+}
+
+#logo	{
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	width: 22vh;	
+}
+
+.dot, .dots-content {
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+
+#gear {
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	width: 50vh;
+}
+
+
+.shadow p {
+	position: relative;
+	height: 15vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+
+.dot-background {
+	position: relative;
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+	background: white;
+	z-index: -10;
+	box-shadow: 0px 0px 1vh rgba(0, 0, 0, 0.8) ;
+}
+
+#dots-container {
+	width: 65vh;
+	height: 65vh;
+}
+
+.dots-content {
+	border-radius: 50%;
+	width: 50vh;
+	height: 50vh;
+	z-index: 1000;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+.hidden {
+	display: none;
+}
+
+/* Styles for Portrait screen */    
+@media all and (orientation:portrait) , (max-aspect-ratio: 1/1) {
+	.shadow, .shadow img {
+		width: 15vw;
+		height: 15vw;
+	}
+
+	#gear {
+		width: 50vw;
+	}
+
+
+	#logo {
+		width: 22vw;
+	}
+
+	.dots-content {
+		width: 50vw;
+		height: 50vw;
+	}
+
+	#dots-container {
+		width: 65vw;
+		height: 65vw;
+	}	
+
+	.dot-background {
+		width: 15vw;
+		height: 15vw;
+
+	}
+}
+
+/* Styles for Landscape screen */
+@media all and (orientation:landscape) {
+
+}
+

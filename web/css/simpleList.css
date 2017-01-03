@@ -1,0 +1,75 @@
+* {
+    text-align: center;
+    text-decoration: none;
+}
+
+/*
+.w3-topnav {
+    position: fixed;
+}
+*/
+
+/*
+.product h5 {
+    color: black;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10%;
+    
+} 
+*/
+
+header h6 {
+    margin: 0 0 15px 0;
+}
+
+slogan {
+    color: red;
+}
+
+.redO {
+    color: red;
+}
+
+.greenA {
+    color: green;
+}
+
+/*.product {margin: 4.16%;}*/
+
+.products img {margin: 4.16%;}
+
+/*
+.product form {
+    margin: 0px;
+}
+*/
+
+.moreInfo {
+    background: red url('images/ic_info_white_48px.svg') no-repeat center;
+    width: 100%;
+    padding-top: calc(100% - 25.4px);
+    border: none;
+}
+
+.rightCard {
+    height: 100%;
+}
+
+.addCart {
+    background: darkgreen url('images/ic_add_shopping_cart_white_48px.svg') no-repeat center;
+    width: 100%;
+    padding-top: calc(100% - 25.4px);
+    border: none;
+}
+
+
+/*div p {display: none}*/
+ 
+
+#deal_bar {
+    line-height: 4;
+    font-size: 3em;
+}
+
+/*class="w3-col s5 m4 l4 w3-card-4"  alt="Deep Tissue Massage Balm" title="Deep Tissue Massage Balm: Enjoy after the ride.">*/

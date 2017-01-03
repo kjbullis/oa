@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/oaperformance">
+	<Resource 
+	  name="/jdbc/oa" 
+	  url="jdbc:mysql://localhost:3306/oa" 
+	  username="brent" 
+	  password="!oA121212!!" 
+	  auth="Container" 
+	  driverClassName="com.mysql.jdbc.Driver" 
+	  factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" 
+	  maxActive="100" maxIdle="30" maxWait="10000" 
+	  testOnBorrow="true" testOnReturn="false" testWhileIdle="true" 
+	  type="javax.sql.DataSource" 
+	  validationInterval="34000" validationQuery="SELECT 1"/>
+</Context>

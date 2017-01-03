@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>&#214&#258 Performance Products: Enjoy the Ride</title>
+		<meta content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="css/normalize.css" type="text/css">
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>  
+		<script src="js/popup.js"></script>  
+		<script src="js/tabs.js"></script>
+		<script src="js/basic.js"></script>
+	</head>    
+	<body>
+		<header></header>
+		<div>
+			<form>
+				<fieldset>
+					<legend>Add a Product</legend>
+					Product name
+					<br>
+					<input type="text" id="productName" name="productName" value="" placeholder="Enter product name">
+					<br>
+					<br>
+					Description
+					<br>
+					<textarea name="description" placeholder="Describe the product" rows='10' cols='100'></textarea>
+					<br>
+					<br>
+					Price
+					<br>					
+					<div class='display-money'>
+						<span>$</span>
+						<input id='price' 
+							   name='price' 
+							   type='number' 
+							   placeholder='0.00'>
+					</div>
+					<br>
+					Shipping (if the customer doesn't specify details in PayPal)
+					<br>					
+					<div class='display-money'>
+						<span>$</span>
+						<input id='shipping' 
+							   name='estimatedCost' 
+							   type='number' 
+							   placeholder='0.00'>
+					</div>
+					<br>
+					Upload image
+					<br>
+					<input type="file" name="pic" accept="image/*">
+					<br>
+					<br>
+					Select ingredients
+					<br>
+					<input type="checkbox" name="ingredient1" value=""> Ingredient name will go here<br>
+					<input type="checkbox" name="ingredient2" value=""> Ingredient name will go here<br>
+					
+					<a href="#ingredientName">Add an ingredient to this list</a>
+					<br>
+					<br>
+					Select testimonials
+					<br>
+					<input type="checkbox" name="testimonial1" value=""> Testimonial name will go here<br>
+					<input type="checkbox" name="testimonial2" value=""> Testimonial name will go here<br>
+					
+					<a href="#testimonialName">Add a testimonial to this list</a>
+					<br>
+					<br>
+					Special Deal 
+					<br>(selecting "yes" will slot the product into the special deal part of the home page)
+					<br>
+					<input type='radio' name="deal" value="Yes"> Yes
+					<br>
+					<input type='radio' name="deal" value="No" checked> No
+					<br>
+					<br>
+					New Product 
+					<br>(selecting "yes" will slot the product into the new product part of the home page)
+					<br>
+					<input type='radio' name="new" value="Yes"> Yes
+					<br>
+					<input type='radio' name="new" value="No" checked> No
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+					<br>
+					<br>
+					<input type="reset">
+					<br>
+					<br>
+				</fieldset>
+				<fieldset>
+					<legend>Add a Testimonial</legend>
+					Person's Name:
+					<br>
+					<input type="text" id="testimonialName" name="testimonialName" value="" placeholder="Enter person's name">
+					<br>
+					<br>
+					Quote:
+					<br>
+					<input type="text" id="testimonialQuote" name="testimonialQuote" value="" placeholder="Enter quote">
+					<br>
+					<br>
+					Date:
+					<br>					
+					<input type="date" id="testimonialDate" name="testimonialDate" value="">
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+					<br>
+					<br>
+					<input type="reset">
+					<br>
+					<br>
+				</fieldset>
+				<fieldset>
+					<legend>Add an Ingredient</legend>
+					Name
+					<br>
+					<input type="text" id="ingredientName" name="ingredientName" value="" placeholder="Enter the ingredient">
+					<br>
+					<br>
+					Natural 
+					<br>(selecting "yes" can add a "natural" icon to the ingredient)
+					<br>
+					<input type='radio' name="natural" value="Yes"> Yes
+					<br>
+					<input type='radio' name="natural" value="No" checked> No
+					<br>
+					<br>
+					Organic 
+					<br>(selecting "yes" can add an "organic" icon to the ingredient)
+					<br>
+					<input type='radio' name="organic" value="Yes"> Yes
+					<br>
+					<input type='radio' name="organic" value="No" checked> No
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+					<br>
+					<br>
+					<input type="reset">
+					<br>
+					<br>
+				</fieldset>
+				<fieldset>
+					<legend>Update a Product</legend>
+					Product name
+					<br>
+					<select id="productDropDown">
+						<option>Product</option>
+						<option>Names</option>
+						<option>Will</option>
+						<option>Go</option>
+						<option>Here</option>
+						<option>Gathered from DB</option>
+					</select>
+					<br>
+					<br>
+					Select fields to change
+					<br>
+					<input type="checkbox" name="testimonial1" value="">Image<br>
+					<input type="checkbox" name="testimonial2" value="">Price<br>
+					<input type="checkbox" name="testimonial2" value="">Shipping<br>
+					<input type="checkbox" name="testimonial2" value="">Testimonials<br>
+					<input type="checkbox" name="testimonial2" value="">Ingredients<br>
+					<input type="checkbox" name="testimonial2" value="">Description<br>
+					<input type="checkbox" name="testimonial2" value="">Natural?<br>
+					<input type="checkbox" name="testimonial2" value="">Organic?<br>
+					<input type="checkbox" name="testimonial2" value="">Special Deal?<br>
+					<input type="checkbox" name="testimonial2" value="">New Product?<br>
+					<br>
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+					<br>
+					<br>
+					<input type="reset">
+					<br>
+					<br>
+					
+					Choose an image that's already been uploaded
+					<br>
+					<select id="productDropDown">
+						<option>image name will appear here</option>
+						<option>image name will appear here</option>
+						<option>and </option>
+						<option>so</option>
+						<option>on</option>
+					</select>
+					<br>
+					<br>					
+					OR
+					<br>
+					<br>
+					Upload a new image image
+					<br>
+					<input type="file" name="pic" accept="image/*">
+					<br>
+					<br>
+					<input type="submit" value="Submit">
+					<br>
+					<br>
+					<input type="reset">
+					<br>
+					<br>
+					
+					<!--then JS will build the rest of the form using data from the DB, and submit will then go in and change all that-->
+				</fieldset>
+				
+			</form>
+		</div>
+	</body>
+</html>

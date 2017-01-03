@@ -1,0 +1,7 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Copyright Kevin Bullis, All Rights Reserved
+<#if licenseLast??>
+${licenseLast}
+</#if>
