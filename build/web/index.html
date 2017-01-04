@@ -2,23 +2,24 @@
 <html>
 	<head>
 		<title>&#214;&#258; Performance Products: Enjoy the Ride</title>
-		<meta content="width=device-width, initial-scale=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>  
-		<!--		<script src="js/popup.js"></script>  
-				<script src="js/tabs.js"></script>-->
+		<script src="js/dots.js"></script>
 		<script src="js/basic.js"></script>
 	</head>    
     <body>
-		<div id="inner-shadow">
+		<div id="page-shadow">
 			<div id="companyName">
-				<p>&#214;&#258; Performance Products</p><p>Enjoy the ride!</p> 
+				<p>&#214;&#258; Performance Products</p>
 			</div>
-			<a href="testimonials.html"><img id="logo" alt="OA Performance Products Logo" src="images/large_OA_RGB%20copy.svg"></a>   
+			<div class="shadow logo">
+				<a href="testimonials.html"><img id="logo" alt="OA Performance Products Logo" src="images/large_OA_RGB%20copy.svg"></a>   
+			</div>
 			<div id="dots">
 				<div id="dots-container">
-					<a href="deal.html"><div class="dot"><div class="dot-background"><div class="shadow">Deals</div></div></div></a>
+					<a href="deal.html"><div class="dot"><div class="dot-background"><div class="shadow"><div>Deals</div></div></div></div></a>
 					<a href="legSalsa.html"><div class="dot"><div class="shadow"><img class="legSalsa" alt="Leg Salsa" src="images/salsa.jpg"></div></div></a>					
 					<a href="legSalsa.html"><div class="dot"><div class="shadow"><img class="legSalsa" alt="Leg Salsa" src="images/salsa.jpg"></div></div></a>	
 					<a href="legSalsa.html"><div class="dot"><div class="shadow"><img class="legSalsa" alt="Leg Salsa" src="images/salsa.jpg"></div></div></a>
@@ -29,12 +30,15 @@
 					<a href="proGlaze.html"><div class="dot"><div class="shadow"><img class="proGlaze" alt="Pro-Glaze Warming Embrocation" src="images/glaze.jpg"></div></div></a>
 					<a href="tShirt.html"><div class="dot"><div class="shadow"><img class="tShirt" alt="OA Performance T-Shirt" src="images/t-shirt.jpg"></div></div></a>
 					<a href="waterBottle.html"><div class="dot"><div class="shadow"><img class="bottle" alt="OA Performance Water Bottle" src="images/deep_tissue.jpg"></div></div></a>
-					<a href="testimonials.html"><div class="dot"><div class="dot-background"><div class="shadow"><p>Testimonials</p></div></div></div></a>
+					<a href="testimonials.html"><div class="dot"><div class="dot-background"><div class="shadow"><div>Testimonials</div></div></div></div></a>
 					<img id="gear" alt="Bicycle Gear" src="images/smallGearFinal.png">
-					<div class='dots-content'>
+					<div id="dots-content" class="hidden shadow">
 						&nbsp;
 					</div>
-				</div>
+				</div>	
+			</div>
+			<div id="slogan">
+				Enjoy the ride!
 			</div>
 		</div>
         <footer>
