@@ -13,27 +13,26 @@ $(document).ready(function () {
 
 	function distributeDots() {
 		var container = $('#dots-container'),
+				gearWidth = $("#gear").width(),
 				start = $("#gear").offset(),
 				width = container.width(),
-				startX = start.left + width / 2,
-				startY = start.top + width / 2,
 				dot = $('.dot'), //array containing each element with the class dot
 				numberOfDots = dot.length, //for now, this depends on the number of dots in the html
 				radius = width / 1.85,
 				angle = 0,
 				step = (2 * Math.PI) / dot.length;
-		console.log("array of dots = " + dot);
-		console.log("number of dots = " + numberOfDots);
-		console.log("radius = " + radius);
-		console.log("startX = " + startX);
-		console.log("startY = " + startY);
+//		console.log("radius = " + radius);
 		dot.each(function () {
-			//equation of a circle
-			//x = originX + r * cos(angle in radians, or angle plus step in this case)
-			//y = originY + r * sin(same as for x)
-			var x = (startX + radius * Math.cos(angle)) - $(this).width() / 2;
-			var y = (startY + radius * Math.sin(angle)) - $(this).width() / 2;
-			console.log($(this).text(), x, y);
+			
+			var dotRadius = $(this).width() / 2,
+				startX = start.left + gearWidth / 2,
+				startY = start.top + gearWidth / 2;
+					//equation of a circle
+					//x = originX + r * cos(angle in radians, or angle plus step in this case)
+					//y = originY + r * sin(same as for x)
+			var x = (startX + radius * Math.cos(angle)),
+				y = (startY + radius * Math.sin(angle));
+//			console.log($(this).text(), x, y);
 			$(this).css({
 				left: x + 'px',
 				top: y + 'px'
@@ -49,17 +48,17 @@ $(document).ready(function () {
 	$(window).on('resize', function () {
 		distributeDots();
 	});
-	
-	
+
+
 
 //	createDots();
 	distributeDots();
 
 
-$(".shadow").click(function () {
+	$(".shadow").click(function () {
 		$(this).find('img').css(
-			'box-shadow', '0px 0px 0px black'
-		);
+				'box-shadow', '0px 0px 0px black'
+				);
 	});
 });
 
