@@ -1,38 +1,23 @@
 //run a .each loop for all the tab elements, positioning them each += 15 degress (or whatever it is) more than the last one so they're arranged around a circle.
 $(document).ready(function () {
-
-
-//	function createDots() {
-//		dot.remove();
-//		for (var i = 0; i < +$('input:number').val(); i++) {
-//			$('<div/>', {
-//				'class': 'dot'
-//			}).appendTo(container);
-//		}
-//	}
-
 	function distributeDots() {
-		var container = $('#dots-container'),
-				gearWidth = $("#gear").width(),
-				start = $("#gear").offset(),
-				width = container.width(),
-				dot = $('.dot'), //array containing each element with the class dot
-				numberOfDots = dot.length, //for now, this depends on the number of dots in the html
-				radius = width / 1.85,
+		var		gear = $("#gear-container"),
+				start = gear.offset(),
+				width = gear.width(),
+				dot = $('.dot'), //here "dot" is an array containing each element with the class dot
+				numberOfDots = dot.length, //the number of dots is equal to the length of the dots array
+				radius = width / 1.5,
 				angle = 0,
-				step = (2 * Math.PI) / dot.length;
-//		console.log("radius = " + radius);
+				step = (2 * Math.PI) / numberOfDots,
+				dotRadius = dot.width() / 2,
+				startX = start.left + width / 2,
+				startY = start.top + width / 2;
 		dot.each(function () {
-			
-			var dotRadius = $(this).width() / 2,
-				startX = start.left + gearWidth / 2,
-				startY = start.top + gearWidth / 2;
-					//equation of a circle
-					//x = originX + r * cos(angle in radians, or angle plus step in this case)
-					//y = originY + r * sin(same as for x)
-			var x = (startX + radius * Math.cos(angle)),
-				y = (startY + radius * Math.sin(angle));
-//			console.log($(this).text(), x, y);
+//equation of a circle
+			//x = originX + radius * cos(angle in radians, or angle plus step in this case)
+			//y = originY + radius * sin(angle in radians, or angle plus step in this case)
+			var x = (startX + radius * Math.cos(angle)) - dotRadius,
+					y = (startY + radius * Math.sin(angle)) - dotRadius;
 			$(this).css({
 				left: x + 'px',
 				top: y + 'px'
@@ -41,25 +26,38 @@ $(document).ready(function () {
 		});
 	}
 
-//	$("form").on("submit", function () {
-//		createDots();
-//	});
-
 	$(window).on('resize', function () {
 		distributeDots();
 	});
 
-
-
-//	createDots();
-	distributeDots();
-
-
-	$(".shadow").click(function () {
+	$("a").click(function () {
 		$(this).find('img').css(
 				'box-shadow', '0px 0px 0px black'
 				);
 	});
+
+	distributeDots();
+
+
+//Build page with form functions 	
+
+//	function createDots() {
+//		dot.remove();
+//		for (var i = 0; i < +$('input:number').val(); i++) {
+//			$('<div/>', {
+//				'class': 'dot'
+//			}).appendTo(container);
+//		}
+//	};
+//	//	
+//	$("form").on("submit", function () {
+//		createDots();
+//	});
+
+//	createDots();
+
 });
+
+
 
 

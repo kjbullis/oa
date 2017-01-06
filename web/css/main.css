@@ -4,37 +4,14 @@
 	box-sizing: border-box;
 }
 
-/*HOME PAGE*/
-/*header*/
-#companyName {
-	position: fixed;
-	top:  0px;
-	left: 0px;
-	transform: translate(0, -32.5%);
-	font-size: 5vh;
-	font-family: 'Frijole', serif;
-	
-}
-
-#slogan {
-	position: fixed;
-	bottom:  0;
-	left: 0;
-	transform: translate(0, 0);
-	font-size: 5vh;
-	font-family: 'Tillana', cursive;
-}
-
-body, html {
-	
-}
-
-/*body*/
+/******************************HOME PAGE*********************************/
 body {
-    background-size: cover;
-	background-color: #99ff00;
 	margin: 0;
 	padding: 0;
+}
+
+.hidden {
+	display: none;
 }
 
 a {
@@ -42,163 +19,221 @@ a {
 	color: black;
 }
 
-#page-shadow {
-	box-shadow: inset 0 -0.2vh 0.5vh black;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-}
-
-/*dots*/
-.current-dot {
-	background: rgba(0,0,0, 0.4);
-}
-
-.dot {
-	width: 15vh;
-	height: 15vh;
-	border-radius: 50%;
-}
-
-.dot-background {
-	position: relative;
-	width: 15vh;
-	height: 15vh;
-	border-radius: 50%;
-	background: white;
-	z-index: -10;
-}
-
-#dots-container {
-	width: 65vh;
-	height: 65vh;
-}
-#dots-container .shadow  {
-/*	position: absolute;*/
-	width: 15vh;
-	height: 15vh;
-	border-radius: 50%;
-	text-align: center;
-}
-
+/*shadow defaults*/
 .shadow {
-	box-shadow: rgba(0, 0, 0, 0.8) 0px 0px .5vh inset;
+	position: relative;
+	width: 100%;
+	height: 100%;
 	border-radius: 50%;
+	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
 }
 
 .shadow:hover {
-	box-shadow: inset 0.02vh .02vh 0.25vh black;
-}
-
-.shadow div {
-	display: block;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);	
+	box-shadow: inset 0.02vh 0.02vh 0.25vh black;
 }
 
 .shadow img {
-	width: 15vh;
-	height: 15vh;
 	position: relative;
+	width: 100%;
+	height: 100%;
 	z-index: -1;
 	border-radius: 50%;
 }
 
-.shadow p {
-	position: relative;
+.shadow .hot-deal {
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: block;
+	width: 70%;
+	height: 70%;
+	border-radius: 0;
+}
+
+.white-background {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	z-index: -3;
+	border-radius: 50%;
 }
 
 
-/*logo*/
+/*setting up shadow for dots without images*/
+.dot-background {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: white;
+}
 
-.logoContainer {
+.shadow div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Tillana', cursive;
+	font-size: 2vh;
+}
+
+/*The following "gear" section serves the function of a header on most webpages*/
+/*GEAR*/
+#gear-container {
 	position: fixed;
 	top: 50vh;
 	left: 50vw;
 	transform: translate(-50%, -50%);
-	width: 22vh;
-	border-radius: 50%;
-	z-index: 999;	
+	width: 65vh;
+	height: 65vh;
+}
+
+#gear {
+	position: relative;
+	width: 100%;
+}
+
+#companyName {
+	position: absolute;
+	width: 100%;
+	top: 60%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	font-size: 2vh;
+	font-family: 'Frijole', serif;
+	text-shadow: 1px 1px 3px rgba(255, 255, 255, 1.0), 3px 2px 0 rgba(255,0,0,0.5), 0 0 10px rgba(255,255,255,0.5);
+}
+
+#slogan {
+	font-family: 'Tillana', cursive;
+	font-size: 4vh;
+	width: 50%;
+	margin: 4.5vh auto 0;
+	padding: 0.1vh;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
+	border-radius: 3vh;
+	background-color: rgba(255,255,255,0.95);
+	text-shadow: none;
+	transform: translateX(3px);
+
+}
+
+/*LOGO*/
+#logo-container {
+	position: fixed;
+	width: 28vh;
+	height: 28vh;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
 }
 
 #logo {
 	position: relative;
-	transform: translateY(0.1vh);
-	z-index: -3;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+#logo .shadow {
+	position: relative;
+	border-radius: 50%;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 0 5px black, 0 0 20px #000;
+	
 }
 
 #logo img {
-	width: 22vh;
-	height: 22vh;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 
-.dot, #dots-content {
+/*MAIN*/
+#cyclists-background {
 	position: fixed;
-	top: 50vh;
-	left: 50vw;
-	transform: translate(-50%, -50%);
+	box-shadow: inset 0 0 0.5vh black;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../images/peloton-rain-attribute-to-Gordon-Hatton.jpg");
+	background-size: cover;
 }
 
-/*gear*/
+#main-container {
+	margin: auto;
+	box-shadow: 0 0 50px black, inset 0 0 0.5vh black;;
+	background-color: rgb(142,225,47) /*rgb(111,175,45) #99ff00*/;
+	width: 100vh;
+	height: 100vh;
+	position: relative;
+}
 
-#gear {
+/*DOTS*/
+.current-dot {
+	background: rgba(0,0,0, 0.4);
+}
+
+#dots-container {
+	width: 85vh;
+	height: 85vh;
+}
+
+.dot {
 	position: fixed;
-	top: 50vh;
-	left: 50vw;
-	transform: translate(-50%, -50%);
-	width: 50vh;
-}
-
-.hidden {
-	display: none;
-}
-
-
-/*Content area*/
-
-#dots-content {
+	width: 15vh;
+	height: 15vh;
 	border-radius: 50%;
-	width: 35vh;
-	height: 35vh;
-	z-index: 2000;
 }
 
 
-/*Product page*/
+/*AREA SHOWING PRODUCT DETAILS AND BUY AND INFO BUTTONS*/
+#product-details-container {
+	position: fixed;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	width: 75vh;
+	height: 75vh;
+	z-index: 2000;
+	background-color: white;
+}
+
+/************************************PRODUCT DETAILS PAGE****************************************/
+
 #product-container {
 	position: relative;
-	background-color: beige;
-	height: 100vw;
+	width: 100%;
+	height: 100%;
 }
 
 #product-image {
 	position: absolute;
-
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #product-image img {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
 	width:50%;
 	border-radius: 50%;
 	z-index: 0;
 }
-	
+
 #product-description {
 	background-color: white;
 	position: absolute;
 	right: 0;
 	width: 66.6666%;
-	
 }	
-	
+
 #product-buy {
 	position: absolute;
 	right: 0;
@@ -211,40 +246,51 @@ a {
 	width: 50%;
 }
 
+/**********STYLES FOR PORTRAIT ORIENTATION ON DEVICES AND PORTRAIT ASPECT RATIO FOR RESIZABLE WINDOWS*****************/ 
+@media all and (orientation:portrait), (max-aspect-ratio: 1/1) {
 
-
-
-/* Styles for Portrait screen */    
-@media all and (orientation:portrait) , (max-aspect-ratio: 1/1) {
-	#dots-container .shadow, .shadow img, .dot-background, .dot {
-		width: 15vw;
-		height: 15vw;
-	}
-
-	#gear {
-		width: 50vw;
-	}
-
-	#logo img, .logoContainer .shadow {
-		width: 22vw;
-		height: 22vw;
-	}
-
-	.dots-content {
-		width: 35vw;
-		height: 35vw;
-	}
-
-	#dots-container {
+	#gear-container {
 		width: 65vw;
 		height: 65vw;
-	}	
-	
+	}
+
 	#companyName {
-		font-size: 4vw;
+		font-size: 2vw;
+		font-family: 'Frijole', serif;
+		text-shadow: 1px 1px 0 rgba(255, 255, 255, 1.0), 3px 2px 0 rgba(255,0,0,0.5), 0 0 10px rgba(255,255,255,0.5);
 	}
 
 	#slogan {
-		font-size: 5vw;
+		font-size: 4vw;
+		margin: 4.5vw auto 0;
+		padding: 0.1vw;
+		box-shadow: rgba(0, 0, 0, 1.0) 0 0 2px inset;
+		border-radius: 3vw;
 	}
+
+	#logo-container {
+		width: 28vw;
+		height: 28vw;
+	}
+
+	#product-details-container {
+		width: 70vw;
+		height: 70vw;
+	}
+
+	#dots-container {
+		width: 85vw;
+		height: 85vw;
+	}
+
+	.dot {
+		width: 15vw;
+		height: 15vw;
+		font-size: 2vw;
+	}
+
+	.shadow div {
+		font-size: 2.5vw
+	}
+
 }

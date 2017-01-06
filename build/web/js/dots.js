@@ -1,31 +1,27 @@
 $(document).ready(function () {
-
+	var container = $("#dots-container"),
+			details = $("#product-details-container"),
+			link = function () {
+				return $(this).attr("href");
+			};
+	dot();
 	function dot() {
-		var container = $("#dots-container"),
-				content = $("#dots-content"),
-//				loading = $("#loading"),
-				link = function () {
-					return $(this).attr("href");
-				};
+		container.find("a").click(function (event) {
+			event.stopPropagation();
 
-		container.find("a").click(function () {
-			container.find(".current-dot").removeClass("current-dot");
 			$(this).find(".shadow").addClass("current-dot");
 			var page = link.call(this);
-//			var loader = setTimeout(function () {
-//				$(loading).show();
-//			}, 100);
-			$(content).empty().load(page, function () {
-//				clearTimeout(loader);
-//				$(loading).hide();
-				content.removeClass("hidden");
+			$(details).empty().load(page, function () {
+				if (details.hasClass("hidden")) {
+					container.find(".current-dot").addClass("current-dot");
+					details.removeClass("hidden");
+				} else {
+					container.find(".current-dot").removeClass("current-dot");
+					details.addClass("hidden");
+				}
 				console.log("Triggered the click function.");
 			});
 			return false;
 		});
 	}
-	;
-
-	dot();
-
 });
