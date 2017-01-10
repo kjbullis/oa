@@ -99,20 +99,21 @@ a {
 
 #companyName {
 	position: absolute;
+	font-family: 'Tillana', cursive;
+	font-size: 1.6vh;
+	color: white;
 	width: 100%;
-	top: 60%;
+	top: 70%;
 	left: 50%;
 	transform: translateX(-50%);
 	text-align: center;
-	font-size: 2vh;
-	font-family: 'Frijole', serif;
-	text-shadow: 1px 1px 3px rgba(255, 255, 255, 1.0), 3px 2px 0 rgba(255,0,0,0.5), 0 0 10px rgba(255,255,255,0.5);
+	text-shadow: 1px 1px 1px rgba(255,0,0,1.0);
 }
 
 #slogan {
 	font-family: 'Tillana', cursive;
 	font-size: 4vh;
-	width: 50%;
+	width: 100%;
 	margin: 4.5vh auto 0;
 	padding: 0.1vh;
 	box-shadow: inset 0 0 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
@@ -147,7 +148,7 @@ a {
 	width: 100%;
 	height: 100%;
 	box-shadow: inset 0 0 5px black, 0 0 20px #000;
-	
+
 }
 
 #logo img {
@@ -174,6 +175,7 @@ a {
 	width: 100vh;
 	height: 100vh;
 	position: relative;
+	border-radius: 2.5%;
 }
 
 /*DOTS*/
@@ -209,20 +211,36 @@ a {
 
 /************************************PRODUCT DETAILS PAGE****************************************/
 
-#product-container {
+#product-image {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	top: 30%;
+	left: 30%;
 }
 
-#product-image {
+.moreInfoButton {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	bottom: 30%;
+	left: 30%;
+	width: 30%;
+}
+
+/*.moreInfoButton img {
+	width: 100%;
+}*/
+
+.addCartButton {
+	position: absolute;
+	bottom: 30%;
+	right: 30%;
+	width: 30%;	
 }
 
 #product-image img {
-	width:50%;
+	box-shadow: 0 0 30px #000;
+	width:100%;
+	height: 100%;
 	border-radius: 50%;
 	z-index: 0;
 }
@@ -234,17 +252,7 @@ a {
 	width: 66.6666%;
 }	
 
-#product-buy {
-	position: absolute;
-	right: 0;
-	width: 50%;
-}
 
-#product-info {
-	position: absolute;
-	left: 0;	
-	width: 50%;
-}
 
 /**********STYLES FOR PORTRAIT ORIENTATION ON DEVICES AND PORTRAIT ASPECT RATIO FOR RESIZABLE WINDOWS*****************/ 
 @media all and (orientation:portrait), (max-aspect-ratio: 1/1) {
@@ -255,17 +263,11 @@ a {
 	}
 
 	#companyName {
-		font-size: 2vw;
-		font-family: 'Frijole', serif;
-		text-shadow: 1px 1px 0 rgba(255, 255, 255, 1.0), 3px 2px 0 rgba(255,0,0,0.5), 0 0 10px rgba(255,255,255,0.5);
+		font-size: 1.7vw;
 	}
 
 	#slogan {
 		font-size: 4vw;
-		margin: 4.5vw auto 0;
-		padding: 0.1vw;
-		box-shadow: rgba(0, 0, 0, 1.0) 0 0 2px inset;
-		border-radius: 3vw;
 	}
 
 	#logo-container {

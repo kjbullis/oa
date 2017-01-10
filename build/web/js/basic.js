@@ -6,7 +6,7 @@ $(document).ready(function () {
 				width = gear.width(),
 				dot = $('.dot'), //here "dot" is an array containing each element with the class dot
 				numberOfDots = dot.length, //the number of dots is equal to the length of the dots array
-				radius = width / 1.5,
+				radius = width / 1.55,
 				angle = 0,
 				step = (2 * Math.PI) / numberOfDots,
 				dotRadius = dot.width() / 2,
