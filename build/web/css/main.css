@@ -147,6 +147,9 @@ a {
 	width: 100%;
 	margin: 6vh auto 0;
 	padding: 0.1vh;
+	border-width: thin;
+	border-color: black;
+	border-style: groove;
 	box-shadow: inset 0 0 2px rgba(0, 0, 0, 1.0), 0 0 2px #000;
 	border-radius: 1vh;
 	background-color: beige;
@@ -296,7 +299,6 @@ a {
 
 #add-cart:hover, #add-cart:focus {
 	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 1.0), 0 0 4px #000;
-	background-color: rgb(163,53,45);
 }
 
 .add-cart-button {
@@ -321,7 +323,6 @@ a {
 
 #more-info:hover, #more-info:focus {
 	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 1.0), 0 0 4px #000;
-	background-color: rgb(92,152,65);
 }
 .more-info-button {
 	position: absolute;

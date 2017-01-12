@@ -21,9 +21,10 @@ Copyright Kevin Bullis, All Rights Reserved
 				</div>
 			</a>	
 			<button id="add-cart" type="submit" form="paypal" value="Submit">
-				<form id="paypal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input class="add-cart-button" type="image" src="images/ic_add_shopping_cart_black_24px.svg" name="submit" alt="shopping cart">
+			</button>
+			<form id="paypal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">	
 					<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					<input class="add-cart-button" type="image" src="images/ic_add_shopping_cart_black_24px.svg" name="submit" alt="shopping cart">
 					<input type="hidden" name="add" value="1">
 					<input type="hidden" name="cmd" value="_cart">
 					<input type="hidden" name="business" value="brentswitt@hotmail.com">
@@ -36,9 +37,8 @@ Copyright Kevin Bullis, All Rights Reserved
 					<input type="hidden" name="lc" value="US">
 					<input type="hidden" name="bn" value="PP-ShopCartBF">
 				</form>
-			</button>	
 		</div>
-		<a href="products.html">
+		<a href="products.htm">
 			<div id="product-image">
 				<img alt="Leg Salsa" src="images/salsa.jpg"><div class="deep-shadow"></div>
 				<!--<img alt="Performance Package" src="images/performance.jpg">-->
