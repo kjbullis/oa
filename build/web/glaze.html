@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Copyright Kevin Bullis, All Rights Reserved
+-->
+<html>
+	<head>
+		<title>&#214;&#258; Pro Glaze Embrocation</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	</head>
+	<body>
+		<div id="details">
+			<div id="description">
+				<h1 class="">Performance Package</h1>
+				<p class="">All the best &#214;&#258; products, for one low price.</p>
+			</div>
+			<a href="products.htm">
+				<div id="more-info">
+					<img class="more-info-button" alt="More Info Icon" src="images/ic_info_black_24px.svg">
+				</div>
+			</a>	
+			<button id="add-cart" type="submit" form="paypal" value="Submit">
+				<img src="images/ic_add_shopping_cart_black_24px.svg" class="add-cart-button" alt="shopping cart">
+			</button>
+			<form id="paypal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">	
+				<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				<input type="hidden" name="add" value="1">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="business" value="brentswitt@hotmail.com">
+                <input type="hidden" name="item_name" value="ProGlaze 4oz">
+                <input type="hidden" name="item_number" value="3">
+                <input type="hidden" name="amount" value="14.99">
+                <input type="hidden" name="no_shipping" value="0">
+                <input type="hidden" name="no_note" value="1">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="lc" value="US">
+                <input type="hidden" name="bn" value="PP-ShopCartBF">
+			</form>
+		</div>
+		<a href="products.htm">
+			<div id="product-image">
+				<img alt="Pro Glaze Embrocation" src="images/glaze.jpg"><div class="deep-shadow"></div>
+			</div>
+		</a>	
+	</body>
+</html>
