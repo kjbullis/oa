@@ -10,6 +10,15 @@ body {
 	padding: 0;
 }
 
+#modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.8);
+}
+
 .hidden {
 	display: none;
 }
@@ -50,6 +59,28 @@ a {
 	border-radius: 0;
 }
 
+.deep-shadow {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 1.0), 0 0 6px #000;
+}
+
+.dee-shadow:hover {
+	box-shadow: inset 0.02vh 0.02vh 0.25vh black;
+}
+
+.deep-shadow img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	border-radius: 50%;
+}
+
+
+
 .white-background {
 	position: absolute;
 	top: 50%;
@@ -72,7 +103,7 @@ a {
 	background: white;
 }
 
-.shadow div {
+.white-background {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -114,11 +145,11 @@ a {
 	font-family: 'Tillana', cursive;
 	font-size: 4vh;
 	width: 100%;
-	margin: 4.5vh auto 0;
+	margin: 6vh auto 0;
 	padding: 0.1vh;
-	box-shadow: inset 0 0 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
-	border-radius: 3vh;
-	background-color: rgba(255,255,255,0.95);
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 1.0), 0 0 2px #000;
+	border-radius: 1vh;
+	background-color: beige;
 	text-shadow: none;
 	transform: translateX(3px);
 
@@ -175,7 +206,7 @@ a {
 	width: 100vh;
 	height: 100vh;
 	position: relative;
-	border-radius: 2.5%;
+	border-radius: 1%;
 }
 
 /*DOTS*/
@@ -202,57 +233,104 @@ a {
 	top: 50vh;
 	left: 50vw;
 	transform: translate(-50%, -50%);
-	border-radius: 50%;
+	border-radius: 1%;
 	width: 75vh;
 	height: 75vh;
-	z-index: 2000;
 	background-color: white;
 }
 
 /************************************PRODUCT DETAILS PAGE****************************************/
 
-#product-image {
-	position: relative;
+#details {
+	position: absolute;
+	/*	top: 50vh;
+		left: 50vw;
+		transform: translate(-50%, -50%);*/
 	width: 100%;
 	height: 100%;
-	top: 30%;
-	left: 30%;
+	border-radius: 1%;
+	overflow: hidden;
+/*	box-shadow: inset 0 0 1vh #000;*/
 }
 
-.moreInfoButton {
+#product-image {
 	position: absolute;
-	bottom: 30%;
-	left: 30%;
-	width: 30%;
-}
-
-/*.moreInfoButton img {
-	width: 100%;
-}*/
-
-.addCartButton {
-	position: absolute;
-	bottom: 30%;
-	right: 30%;
-	width: 30%;	
+	top: 0%;
+	transform: translate(-45%, -10%);
+	width: 68%;
+	height: 68%;
 }
 
 #product-image img {
-	box-shadow: 0 0 30px #000;
+	position: absolute;
 	width:100%;
 	height: 100%;
 	border-radius: 50%;
-	z-index: 0;
 }
 
-#product-description {
-	background-color: white;
+#description {
 	position: absolute;
+	top: 0;
 	right: 0;
-	width: 66.6666%;
-}	
+	width: 60%;
+	height: 66.6666%;
+	font-size: 2.5vh;
+}
+
+#description h1 {
+	font-size: 4vh;
+}
+
+#add-cart {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 20%;
+	background-color: rgb(163,53,38);
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
+}
+
+#add-cart:hover, #add-cart:focus {
+	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 1.0), 0 0 4px #000;
+	background-color: rgb(163,53,45);
+}
+
+.add-cart-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 60%;
+}
+
+#more-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 20%;
+	background-color: rgb(92,152,59);
+	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
+}
 
 
+#more-info:hover, #more-info:focus {
+	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 1.0), 0 0 4px #000;
+	background-color: rgb(92,152,65);
+}
+.more-info-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 60%;
+}
 
 /**********STYLES FOR PORTRAIT ORIENTATION ON DEVICES AND PORTRAIT ASPECT RATIO FOR RESIZABLE WINDOWS*****************/ 
 @media all and (orientation:portrait), (max-aspect-ratio: 1/1) {
@@ -293,6 +371,19 @@ a {
 
 	.shadow div {
 		font-size: 2.5vw
+	}
+
+	#details {
+		width: 100vw;
+		height: 100vw;	
+	}
+
+	#description {
+		font-size: 2.5vw;
+	}
+
+	#description h1 {
+		font-size: 4vw;
 	}
 
 }

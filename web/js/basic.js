@@ -30,12 +30,13 @@ $(document).ready(function () {
 		distributeDots();
 	});
 
-	$("a").click(function () {
-		$(this).find('img').css(
-				'box-shadow', '0px 0px 0px black'
-				);
-	});
-
+//	$("a").click(function () {
+//		$(this).find('img').css(
+//				'box-shadow', '0px 0px 0px black'
+//				);
+//	});
+	
+	
 	distributeDots();
 
 
