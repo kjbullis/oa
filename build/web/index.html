@@ -7,13 +7,15 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
-		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>  
+<!--		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />-->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/dots.js"></script>
 		<script src="js/basic.js"></script>
 	</head>    
     <body>
 		<div id="cyclists-background">
-			
+
 			<div id="main-container">
 				<div id="gear-container">
 					<img id="gear" alt="Bicycle Gear" src="images/smallGearFinal.png">
@@ -28,7 +30,7 @@
 					<a href="testimonials.html"><div id="logo"><div class="shadow"><img alt="OA Performance Products Logo" src="images/large_OA_RGB%20copy.svg"></div></div></a>
 				</div>
 				<div id="dots-container">
-					<a href="deal.html"><div class="dot"><div class="shadow"><img class="hot-deal" alt="Hot Deal" src="images/hotdeal.gif"></div><div class="white-background"></div></div></a>
+					<a href="deal.html"><div class="dot"><div class="shadow highlight"><img class="hot-deal" alt="Hot Deal" src="images/hotdeal.gif"></div><div class="white-background"></div></div></a>
 					<a href="legSalsa.html"><div class="dot"><div class="shadow"><img alt="Leg Salsa" src="images/salsa.jpg"></div></div></a>					
 					<a href="chamois.html"><div class="dot"><div class="shadow"><img alt="Smooth Ride Chamois Cream" src="images/chamois.jpg"></div></div></a>
 					<a href="balm.html"><div class="dot"><div class="shadow"><img alt="Deep Tissue Massage Cream" src="images/deep_tissue.jpg"></div></div></a>
@@ -40,10 +42,17 @@
 					<a href="testimonials.html"><div class="dot"><div class="dot-background"><p>TESTIMONIALS</p></div><div class="shadow"></div></div></a>
 				</div>
 			</div>
+			<div class="swipe-here">
+				<img class='move-counter-clockwise' src="images/ic_loop_black_24px.svg">
+				<img class="left-chevron" src="images/ic_chevron_left_black_24px.svg">
+				<div>Swipe to preview</div>
+				<img class='right-chevron' src="images/ic_chevron_right_black_24px.svg">
+				<img class='move-clockwise' src="images/ic_loop_black_24px.svg">
+			</div>
 		</div>
 		<div class="hidden" id="modal"></div>
         <div class="hidden" id="product-details-container">
-				</div>
+		</div>
 		<footer>
         </footer>
     </body>

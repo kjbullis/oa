@@ -19,6 +19,15 @@ body {
 	background-color: rgba(0,0,0,0.8);
 }
 
+.move-clockwise {
+	transform: scaleX(-1);
+    filter: FlipH;
+}
+
+swipe-here {
+	display: none;
+}
+
 .hidden {
 	display: none;
 }
@@ -56,7 +65,6 @@ a {
 	transform: translate(-50%, -50%);
 	width: 70%;
 	height: 70%;
-	border-radius: 0;
 }
 
 .deep-shadow {
@@ -67,8 +75,12 @@ a {
 	box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 1.0), 0 0 6px #000;
 }
 
-.dee-shadow:hover {
+.deep-shadow:hover {
 	box-shadow: inset 0.02vh 0.02vh 0.25vh black;
+}
+
+.highlight {
+	box-shadow: 0 0 20px #ff0;
 }
 
 .dot p {
@@ -108,14 +120,14 @@ a {
 	background: white;
 }
 
-.white-background {
+/*.white-background {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-family: 'Tillana', cursive;
 	font-size: 2vh;
-}
+}*/
 
 /*The following "gear" section serves the function of a header on most webpages*/
 /*GEAR*/
@@ -234,7 +246,10 @@ a {
 	border-radius: 50%;
 }
 
-
+.preview {
+	width: 50vh;
+	height: 50vh;
+}
 
 
 /*AREA SHOWING PRODUCT DETAILS AND BUY AND INFO BUTTONS*/
@@ -355,6 +370,16 @@ a {
 /**********STYLES FOR PORTRAIT ORIENTATION ON DEVICES AND PORTRAIT ASPECT RATIO FOR RESIZABLE WINDOWS*****************/ 
 @media all and (orientation:portrait), (max-aspect-ratio: 1/1) {
 
+	@keyframes growX {
+		from {width: 20vw}
+		to {width: 50vw}
+	}
+
+	@keyframes growY {
+		from {height: 20vw}
+		to {height: 50vw}
+	}
+
 	#gear-container {
 		width: 55vw;
 		height: 55vw;
@@ -434,4 +459,28 @@ a {
 		transform: translate(-25%, -10%);
 	}	
 
+	.swipe-here {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80%;
+		height: 20vh;
+	}
+
+	.swipe-here div {
+		flex-grow: 4;
+		text-align: center;
+
+	}
+	.swipe-here img {
+		flex-grow: 1;
+	}
+
+	.preview .dot {
+		width: 50vw;
+		height: 50vw;
+	}
 }
