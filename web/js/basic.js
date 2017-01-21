@@ -1,14 +1,67 @@
-//run a .each loop for all the tab elements, positioning them each += 15 degress (or whatever it is) more than the last one so they're arranged around a circle.
+//create a way to check if an element exists
+$.fn.exists = function () {
+	return this.length !== 0;
+};
+
 $(document).ready(function () {
 	var originalSpotX,
-			originalSpotY;
+			originalSpotY,
+			details = $("#product-details-container"),
+			modal = $("#modal");
 
+//arrange dots evenly around a circle
 	distributeDots();
 
-	//create a way to check if an element exists
-	$.fn.exists = function () {
-		return this.length !== 0;
-	};
+//keep everything where it should be after resizing the window
+	$(window).on('resize', function () {
+		$('.big-dot').removeClass('big-dot');
+		if ($(window).width > 800) {
+			$('.swipe-here').addClass('hidden');
+		}
+		distributeDots();
+	});
+
+$("#modal").on("click", function () {
+		modal.addClass("hidden");
+		details.empty().addClass("hidden");
+		$(".current-dot").removeClass("current-dot");
+		putDotBack();
+		});	
+		
+//preview product image on small screens
+	$(".swipe-here").on("swipeleft", function() {
+		putDotBack();
+		nextDotCounterClockwise();
+		moveDotToCorner();
+	});
+	$(".swipe-here").on("swiperight", function() {
+		putDotBack();
+		nextDotClockwise();
+		centerDot();
+	});
+
+
+	function moveDotToCorner() {
+		var width = $('.current-dot').width(),
+				x = 50 + width,
+				y = 50 + width;
+		$('.current-dot .dot').addClass('big-dot').delay(125).animate({
+			left: x + 'px',
+			top: y + 'px'
+		}, 250);
+	
+	}
+	
+	function moveProductImageToCorner() {
+		var width = $('.current-dot').width(),
+				x = 50 + width,
+				y = 50 + width;
+		$('.product-image').delay(700).css({
+			left: x + 'px',
+			top: y + 'px'
+		});
+	
+	}
 
 	function centerDot() {
 		var gear = $("#gear-container"),
@@ -17,14 +70,14 @@ $(document).ready(function () {
 				dWidth = gWidth * 0.4545454545,
 				x = start.left + gWidth / 2 - dWidth,
 				y = start.top + gWidth / 2 - dWidth;
-		$('.preview .dot').animate({
+		$('.current-dot .dot').addClass('big-dot').delay(125).animate({
 			left: x + 'px',
 			top: y + 'px'
 		}, 250);
 	}
 
 	function putDotBack() {
-		$('.preview .dot').animate({
+		$('.current-dot .dot').removeClass('big-dot').delay(125).animate({
 			left: originalSpotX + 'px',
 			top: originalSpotY + 'px'
 		}, 250);
@@ -52,75 +105,60 @@ $(document).ready(function () {
 				left: x + 'px',
 				top: y + 'px'
 			});
+				if (angle > 4.36 && angle < 5.24) {
+					$(this).addClass('top-dot');
+				}
 			angle += step;
 		});
 	}
 
-//PREVIEW PRODUCTS WITH SWIPING ON PORTRAIT MODE
-	$(".swipe-here").on("swipeleft", function () {
-		putDotBack();
+//there's got to be a way to simplify this so I don't need highlight.
+	function nextDotCounterClockwise() {
 		//check if there is a next anchor
-		if ($('.highlight').closest('a').next("a").exists()) {
-			//find the dot with the class "highlight", remove that class, find the next dot, add the class
-			$('.highlight').removeClass('highlight').closest('a').next().find('.shadow').addClass('highlight');
-			$('.preview').removeClass('preview').closest('a').next().addClass('preview').focus();
-			var here = $('.preview .dot').offset();
-				originalSpotX = here.left;
-				originalSpotY = here.top;
-			$('.preview .dot', function () {
-				centerDot();
-			});	
+		if ($('.current-dot').closest('a').next("a").exists()) {
+			$('.current-dot').removeClass('current-dot').closest('a').next().addClass('current-dot').focus();
+			var here = $('.current-dot .dot').offset();
+			console.log("Location of current dot is x: " + here.left + " y: " + here.top);
+			originalSpotX = here.left;
+			originalSpotY = here.top;
 		} else {
 			// if there is no next anchor, select the first anchor
-//			console.log("got to else statement -- no next a exists");
-			$('.highlight').removeClass('highlight');
-			$('.preview').removeClass('preview');
-			$('#dots-container a:first').addClass('preview').find('.shadow').addClass('highlight').focus();
-			var here = $('.preview .dot').offset();
-				originalSpotX = here.left;
-				originalSpotY = here.top;
-			$('.preview .dot', function () {
-				centerDot();
-			});	
-		}
-	});
+			$('.current-dot').removeClass('current-dot');
+			$('#dots-container a:first').addClass('current-dot').focus();
+			var here = $('.current-dot .dot').offset();
+			console.log("Location of current dot is x: " + here.left + " y: " + here.top);
+			originalSpotX = here.left;
+			originalSpotY = here.top;
+			};
+	}
 
-	$(".swipe-here").on("swiperight", function () {
+	function nextDotClockwise() {
 		putDotBack();
 		//check if there is a previous anchor
-		if ($('.highlight').closest('a').prev("a").exists()) {
+		if ($('.current-dot').closest('a').prev("a").exists()) {
 			//find the dot with the class "highlight", remove that class, find the next dot, add the class
-			$('.highlight').removeClass('highlight').closest('a').prev().find('.shadow').addClass('highlight');
-			$('.preview').removeClass('preview').closest('a').prev().addClass('preview').focus();
-			var here = $('.preview .dot').offset();
-				originalSpotX = here.left;
-				originalSpotY = here.top;
-			$('.preview .dot', function () {
-				centerDot();
-			});	
+			$('.current-dot').removeClass('current-dot').closest('a').prev().addClass('current-dot').focus();
+			var here = $('.current-dot .dot').offset();
+			console.log("Location of current dot is x: " + here.left + " y: " + here.top);
+			originalSpotX = here.left;
+			originalSpotY = here.top;
 		} else {
 			// if there is no previous anchor, select the last anchor
-//			console.log("got to else statement -- no next a exists");
-			$('.highlight').removeClass('highlight');
-			$('.preview').removeClass('preview');
-			$('#dots-container a:last').addClass('preview').find('.shadow').addClass('highlight').focus();
-			var here = $('.preview .dot').offset();
-				originalSpotX = here.left;
-				originalSpotY = here.top;
-			$('.preview .dot', function () {
-				centerDot();
-			});	
+			$('.current-dot').removeClass('current-dot');
+			$('#dots-container a:last').addClass('current-dot').focus();
+			var here = $('.current-dot .dot').offset();
+			console.log("Location of current dot is x: " + here.left + " y: " + here.top);
+			originalSpotX = here.left;
+			originalSpotY = here.top;
 		}
-	});
+	}
 
-	$(window).on('resize', function () {
-		distributeDots();
-		if ($(window).width >= $(window).height) {
-			$('.preview').removeClass('preview');
-		}
-	});
-
-
+	function swipeBetweenDetailPages() {
+		//when the popup is opened, add class .swipe-here to divs that cover the whole window (and remove it when the popup is closed)
+		//how do I guard against accidentally tapping outside --by making the 	
+		//when someone swipes anywhere on the screen
+		//bring up the "next" product by triggering a click on the next one, using the swipe algorthims.
+	}
 
 });
 

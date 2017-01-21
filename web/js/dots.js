@@ -2,36 +2,45 @@ $(document).ready(function () {
 	var container = $("#dots-container"),
 			details = $("#product-details-container"),
 			modal = $("#modal"),
+			windowWidth = $(window).width(),
+			windowHeight = $(window).height(),
 			link = function () {
 				return $(this).attr("href");
 			};
-	dot();
-	function dot() {
+	enableLoadDetails();
+	enableHideDetails();
+	function enableLoadDetails() {
 		container.find("a").click(function (event) {
 			event.stopPropagation();
-			if (modal.hasClass('hidden')) {
-				modal.removeClass("hidden");
-			}
-			$(this).find(".shadow").addClass("current-dot");
 			var page = link.call(this);
-			$(details).empty().load(page, function () {
-				if (details.hasClass("hidden")) {
-					container.find(this).addClass("current-dot");
-					details.removeClass("hidden");
-				} else {
-					container.find(".current-dot").removeClass("current-dot");
-					details.addClass("hidden");
-				}
-				console.log("Triggered the click function.");
-			});
+//	When you click on a link inside the dots-container
+//  Shrink any dot that's big already
+			$('.big-dot').removeClass('big-dot');
+//	Remove anything that's in the details container
+//  Load the page associated with that link into the details container
+			$(this).find('.dot').addClass('big-dot');
+			if ($('.big-dot').hasClass('top-dot')) {
+				$('.top-dot').css({
+					top: '6vh'
+				});
+			}
+			details.empty().load(page).show('fast');
+// Increase the size of the dot and position it just outside the details container
 			return false;
 		});
 	}
 
-	$("#modal").on("click", function () {
-		modal.addClass("hidden");
-		details.empty().addClass("hidden");
-		$(".current-dot").removeClass("current-dot");
+	function enableHideDetails() {
+// You click anywhere that's not a link in the dots container, and that is outside the details container, 
+		$(document).click(function (event) {
+			if (!$(event.target).closest(details).length || $(event.target).closest(container).length) {
+				// hide the details container and remove the big dot class.
+				details.hide('fast');
+				$('.big-dot').removeClass('big-dot');
+			}
 		});
+	}
+
+
 
 });

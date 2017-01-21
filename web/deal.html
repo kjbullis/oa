@@ -12,12 +12,20 @@ Copyright Kevin Bullis, All Rights Reserved
 	<body>
 		<div id="details">
 			<div id="description">
-				<h1 class="">Performance Package</h1>
-				<p class="">All the best &#214;&#258; products, for one low price.</p>
+				<h1>Performance Package</h1>
+				<p class="product-amount">All our most popular products, for just $34.99!</p>
+				<p class="product-slug">Bring the heat!</p>
+				<p>Leg Salsa <br>Breathe Strong<br>Deep Tissue Massage Balm<br>Smooth Ride Chamois Cream <br> Plus a free T-Shirt! </p>
 				<form id="paypal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">	
-					<input type="hidden" name="on0" value="Select Shirt Size">
-					<span>Select Shirt Size: </span>
-					<select name="os0"><option value="Small">Small<option value="Medium">Medium<option value="Large">Large<option value="X-Large">X-Large<option value="XX-Large">XX-Large</select>
+					<input type="hidden" name="on0" value="Shirt Size">
+					<span>Select Shirt Size:</span>
+					<select name="os0">
+						<option value="Small">Small
+						<option value="Medium">Medium
+						<option value="Large">Large
+						<option value="X-Large">X-Large
+						<option value="XX-Large">XX-Large
+					</select>
 					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 					<input type="hidden" name="add" value="1">
 					<input type="hidden" name="cmd" value="_cart">
@@ -33,21 +41,30 @@ Copyright Kevin Bullis, All Rights Reserved
 					<input type="hidden" name="lc" value="US">
 					<input type="hidden" name="bn" value="PP-ShopCartBF">
 				</form>
+				<br>
+				<div class="more-details-links">
+					<a href="ingredients.html"><span>Ingredients</span></a>
+					<span>&nbsp;</span>
+					<a href="testimonials.html"><span>Testimonials</span></a>
+				</div>
+				<br>
 			</div>
+
 			<a href="products.htm">
 				<div id="more-info">
 					<img class="more-info-button" alt="More Info Icon" src="images/ic_info_black_24px.svg">
 				</div>
 			</a>	
 			<button id="add-cart" type="submit" form="paypal" value="Submit">
-				<input class="add-cart-button" type="image" src="images/ic_add_shopping_cart_black_24px.svg" name="submit" alt="shopping cart">
+				<img src="images/ic_add_shopping_cart_black_24px.svg" class="add-cart-button" alt="shopping cart">
 			</button>
 		</div>
-		<a href="products.htm">
-			<div id="product-image">
-				<img alt="Leg Salsa" src="images/performance.jpg"><div class="deep-shadow"></div>
-				<!--<img alt="Performance Package" src="images/performance.jpg">-->
-			</div>
-		</a>	
-	</body>
+	</div>
+	<a href="products.htm">
+		<div id="product-image">
+			<img alt="Leg Salsa" src="images/performance.jpg"><div class="deep-shadow"></div>
+			<!--<img alt="Performance Package" src="images/performance.jpg">-->
+		</div>
+	</a>	
+</body>
 </html>
