@@ -12,6 +12,7 @@ $(document).ready(function () {
 //arrange dots evenly around a circle
 	distributeDots();
 
+
 //keep everything where it should be after resizing the window
 	$(window).on('resize', function () {
 		$('.big-dot').removeClass('big-dot');
