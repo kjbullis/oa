@@ -1,0 +1,212 @@
+@media all and (min-aspect-ratio: 1) {
+
+
+
+}
+/* </editor-fold> */
+
+
+/* <editor-fold defaultstate="collapsed" desc="3/5">*/
+@media all and (min-aspect-ratio: 3/5) {
+
+	.dot-container h3, .pull-tab {
+		display: none;
+	}
+	
+/*	body {
+		background-image: url("../images/red_green_attribute_to_Gordon_Hatton.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}*/
+	
+	/*GEAR*/
+	#gear {
+		display: initial;
+		width: 60vh;
+		height: 60vh;
+	}
+
+	/*LOGO*/
+	#logo {
+		width: 22vh;
+		height: 44vh;
+		font-family: 'Tillana', cursive;
+		text-align: center;	
+	}
+
+	#company-name {
+		position: absolute;
+		top: 38%;
+		font-size: 2.5vh;
+		width: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.red-line {
+		position: absolute;
+		width: 100%;
+		height: 0.75vh;
+		box-shadow: inset 0 0 2px #000;
+		border-radius: 0.5%;
+	}
+
+	#philosophy {
+		display: flex;
+		padding: 1vh 1vh 0 1vh;
+		font-size: 2.25vh;
+		font-family: 'Tillana', cursive;
+		background-color: rgba(255,255,255, 0.4);
+		box-shadow: 0 0 2px #000;
+	}
+
+	#slogan {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		font-size: 3vh;
+		font-family: 'Tillana', cursive;
+		padding: 0 1vh;
+		box-shadow: 0 0 2px #000;
+		background-color: rgba(255,255,255, 0.15);
+	}
+
+	#slogan div {
+		flex-grow: 1;
+	}
+
+	.spacer {
+		flex-grow: 2;
+	}
+
+	#page-background {
+		position: initial;
+		box-shadow: inset 0 0 0.5vh black;
+		width: 100vh;
+		height: 100vh;
+		margin: 0 auto;
+	}
+
+
+
+	/*DOTS*/
+
+	#dots-container {
+		width: 85vh;
+		height: 85vh;
+		font-family: 'Tillana', cursive;
+		font-weight: bolder;
+	}
+
+	.dot p, .dot div {
+		font-family: 'Tillana', cursive;
+		text-align: center;
+	}
+	
+	.big-dot {
+		width: 30vh;
+		height: 30vh;
+		font-size: 3vh;
+	}
+
+	.dot .hot-deal {
+		width: 70%;
+		height: 70%;
+		border-radius: 0;
+	}
+
+	.dot-container h3, .pull-tab {
+		display: none;
+	}
+	
+	.pull-tab
+	
+	#add-cart {
+		width: 12.5vw;
+		height: 12.5vw;
+	}
+
+	#details {
+		width: 45vw;
+		height: 45vw;
+	}
+
+
+	#details h1 {
+		height: 12.5vw;
+		font-size: 3.5vh;
+		width: 30vh;
+		padding: 2vw 0;
+		text-align: center;
+	}
+
+	#gear {
+		width: 55vw;
+		height: 55vw;
+	}
+
+	#logo {
+		height: 20vw;
+		width: 20vw;
+	}
+
+	#company-name {
+		top: 58%; 
+		font-size: 3vw;
+	}
+
+	#slogan {
+		display: none;
+	}
+
+	#philosophy {
+		display: none;
+	}
+
+
+	#dots-container {
+		width: 85vw;
+		height: 85vw;
+	}
+
+	.dot {
+		width: 15vw;
+		height: 15vw;
+		font-size: 2vw;
+		position: fixed;
+	}
+
+	.dot div {
+		font-size: 2.5vw;
+
+	}
+
+	#description {
+		font-size: 2.5vw;
+		padding: 2vw;
+	}
+
+	#description a {
+		padding: 2vw;
+	}
+
+	#product-image {
+		width: 30vw;
+		height: 30vw;
+		transform: translate(-25%, -10%);
+	}	
+
+	.big-dot {
+		width: 30vw;
+		height: 30vw;
+		font-size: 3vw;
+	}
+
+
+}
+
+/* </editor-fold> */
+
+
+

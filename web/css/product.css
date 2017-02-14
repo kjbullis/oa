@@ -1,0 +1,154 @@
+/*
+Copyright Kevin Bullis, All Rights Reserved
+*/
+/* 
+    Created on : Feb 7, 2017, 4:28:46 PM
+    Author     : kevinbullis
+*/
+
+/************************************PRODUCT DETAILS PAGE****************************************/
+
+
+
+#details {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-size: large;
+}
+
+/*#details h1 {
+	text-align: left;
+	margin: 0;
+	height: 12.5vh;
+	font-size: 3.5vh;
+	width: 30vh;
+	padding: 2vh 0;
+}*/
+
+#details p, #details span {
+	position: relative;
+
+}
+
+#paypal{
+	position: relative;
+	bottom: 0;
+}
+
+#details .product-slug {
+	text-align: center;
+	font-size: 2vh;
+	width: 100%;
+}
+
+#details .product-amount {
+	font-style: italic;
+	text-align: center;
+	padding: 0 10px;
+	width: 100%;
+}
+
+#details select {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#product-image {
+	display: none;/* KB NOTE may want to change this.*/
+	position: absolute;
+	top: 0%;
+	transform: translate(-45%, -10%);
+	width: 68%;
+	height: 68%;
+}
+
+#product-image img  {
+	position: absolute;
+	width:100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+blockquote img {
+	width: 100%;
+}
+
+
+#description {
+	width: 100%;
+	height: 100%;
+/*	font-size: 1.5vh;*/
+	padding: 2vh;
+}
+
+.more-details-links {
+	display: flex;
+	position: relative;
+	text-align: center;
+	z-index: 10;
+}
+
+#details .more-details-links a {
+	background-color: whitesmoke;
+	box-shadow: 0 1px 2px #000;
+	
+}
+
+#details .more-details-links a:hover {
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 1.0);
+}
+
+#description a {
+	border-style: groove;
+	border-color: darkgreen;
+	border-width: thin;
+	padding: 2vh;
+	flex-grow: 1;
+}
+
+#add-cart {
+	float: right;
+	width: 12.5vh;
+	height: 12.5vh;
+	background-color: rgba(143, 59, 46,1);
+	padding: 0;
+	margin-left: 3vw;
+	border-radius: 0 0 0 5px;
+	border: none;
+	box-shadow: 0 1px 2px #000;
+	z-index: 11;
+}
+
+#add-cart:hover, #add-cart:focus {
+	box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 1.0);
+}
+
+.add-cart-button {
+	width: 60%;
+	height: 60%;
+}
+
+#more-info {
+	display: none;
+	position: absolute;
+	bottom: 5%;
+	left: 32.5%;
+	width: 15%;
+	height: 15%;
+	background-color: rgba( 34,106, 56,1) ;
+	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 1.0), 0 0 2px #000;
+}
+
+#more-info:hover, #more-info:focus {
+	box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 1.0);
+}
+.more-info-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60%;
+	height: 60%;
+}

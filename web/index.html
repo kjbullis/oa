@@ -3,52 +3,159 @@
 	<head>
 		<title>&#214;&#258; Performance Products: Enjoy the Ride</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title">
+		<link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen" title="no title">
+		<link rel="stylesheet" href="css/desktop.css" type="text/css" media="screen" title="no title">
+		<link rel="stylesheet" href="css/product.css" type="text/css" media="screen" title="no title">
 		<link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Frijole" rel="stylesheet">
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="js/dots.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
+		<script src="js/loadProductDetails.js"></script>
 		<script src="js/basic.js"></script>
 	</head>    
     <body>
-		<div id="cyclists-background">
-			<div id="cyclists-overlay">
-			</div>
-			<div id="main-container" class="rounded-ridge blue-4">
-			</div>
-			<div id="gear-container">
-				<img id="gear" alt="Bicycle Gear" src="images/smallGearFinal.png">
-			</div>
-			<a href="testimonials.html">
-				<div id="logo-container">
-					<div id="logo" class=""><img src="images/large_OA.jpg"></div>
-					<div id="company-name">PERFORMANCE PRODUCTS</div>
+		<div id="page-background" class="blue-4"></div>
+
+		<!--			<div id="logo" class="dot">
+						<img class="round-fill" alt="OA Performance Logo" src="images/large_OA.jpg">
+					</div>-->
+		<div id="dots-container">
+			<a class="current-dot" href="deal.html">
+				<div class="dot-container">
+					<h3 class="right">Special deals</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<div class="white-background center-absolute round-fill">
+							<img class="center-absolute" alt="Hot Deal" src="images/hotdeal.gif">	
+							<div class="shadow round-fill highlight center-absolute">	
+							</div>	
+						</div>			
+					</div>
 				</div>
 			</a>
-			<div class="red-3" id="slogan">Enjoy the Ride!</div>
-			<div class="hidden" id="product-details-container"></div>
-			<div id="dots-container">
-				<a class="current-dot" href="deal.html"><div class="dot"><div class="shadow highlight"><img class="hot-deal" alt="Hot Deal" src="images/hotdeal.gif"></div><div class="center-absolute white-background"></div></div></a>
-				<a href="legSalsa.html"><div class="dot"><div class="shadow"><img alt="Leg Salsa" src="images/salsa.jpg"></div></div></a>					
-				<a href="chamois.html"><div class="dot"><div class="shadow"><img alt="Smooth Ride Chamois Cream" src="images/chamois.jpg"></div></div></a>
-				<a href="testimonials.htm"><div class="dot"><div class="dot-background"><p>Testimonials</p></div><div class="shadow"></div></div></a>
-				<a href="philosophy.html"><div class="dot"><div class="dot-background"><p>Philosophy</p></div><div class="shadow"></div></div></a>
-				<a href="balm.html"><div class="dot"><div class="shadow"><img alt="Deep Tissue Massage Cream" src="images/deep_tissue.jpg"></div></div></a>
-				<a href="deal.html"><div class="dot"><div class="shadow"><img alt="Leg Salsa" src="images/performance.jpg"></div></div></a>					
-				<a href="breathe.html"><div class="dot"><div class="shadow"><img alt="Breathe Strong Respiratory Preparation" src="images/breathe.jpg"></div></div></a>
-				<a href="glaze.html"><div class="dot"><div class="shadow"><img alt="Pro-Glaze Warming Embrocation" src="images/glaze.jpg"></div></div></a>
-				<a href="tshirt.html"><div class="dot"><div class="shadow"><img alt="OA Performance T-Shirt" src="images/t-shirt.jpg"></div></div></a>
-				<a href="waterbottle.html"><div class="dot"><div class="shadow"><img alt="OA Performance Water Bottle" src="images/bottle.jpg"></div></div></a>
+			<div class="details hidden green-1"></div>
+			<a href="legSalsa.html">
+				<div class="dot-container">
+					<h3 class="right">Leg Salsa</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill center-absolute" alt="Leg Salsa" src="images/salsa.jpg">				
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="chamois.html">
+				<div class="dot-container">
+					<h3 class="right">Chamois Cream</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill center-absolute" alt="Smooth Ride Chamois Cream" src="images/chamois.jpg">
+						<div class="round-fill shadow center-absolute"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="testimonials.htm">
+				<div class="dot-container">
+					<h3 class="right">Our Customers</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<div class="round-fill shadow center-absolute">
+							<p class="center-absolute">TESTIMONIALS</p>
+						</div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="balm.html">
+				<div class="dot-container">
+					<h3 class="right">Deep Tissue</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="Deep Tissue Massage Cream" src="images/deep_tissue.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="deal.html">
+				<div class="dot-container">
+					<h3 class="right">Performance Package</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="Leg Salsa" src="images/performance.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="breathe.html">
+				<div class="dot-container">
+					<h3 class="right">Breathe Strong</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="Breathe Strong Respiratory Preparation" src="images/breathe.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="glaze.html">
+				<div class="dot-container">
+					<h3 class="right">Pro Glaze</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="Pro-Glaze Warming Embrocation" src="images/glaze.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="tshirt.html">
+				<div class="dot-container">
+					<h3 class="right">T-Shirts</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="OA Performance T-Shirt" src="images/t-shirt.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<a href="waterbottle.html">
+				<div class="dot-container">
+					<h3 class="right">Water Bottle</h3>
+					<div class="pull-tab green-1"></div>
+					<div class="dot">
+						<img class="round-fill" alt="OA Performance Water Bottle" src="images/bottle.jpg">
+						<div class="round-fill shadow"></div>
+					</div>
+				</div>
+			</a>
+			<div class="details hidden green-1"></div>
+			<div class="red-3 red-line"></div>
+			<div id="company-name" class="outlined-text">PERFORMANCE PRODUCTS</div>
+			<div class="" id="philosophy">
+				<div>Products made by cyclists for cyclists.</div>
+				<div class="spacer"></div>
+				<div class="right">Natural and environmentally-friendly ingredients.</div>
+			</div>
+			<div class="" id="slogan">
+				<div class="ownerName">By Brent Witters</div>
+				<div class="spacer"></div>
+				<div class="right outlined-text">Enjoy the ride!</div>
+			</div>
+			<div id="gear" class="center-fixed">
+				<img class="round-fill" alt="Bicycle Gear" src="images/smallGearFinal.png">
 			</div>
 			<div class="swipe-here">
-				<img class="left-chevron" src="images/ic_chevron_left_black_24px.svg">
-				<div>Swipe to preview</div>
-				<img class='right-chevron' src="images/ic_chevron_right_black_24px.svg">
+				<img class="" alt="" src="images/ic_chevron_left_black_24px.svg">
+				<img class='right-chevron' alt="" src="images/ic_chevron_right_black_24px.svg">
 			</div>
-		</div>
-		<footer>
-		</footer>
+			<footer>
+			</footer>
+		</div>	
 	</body>
 </html>

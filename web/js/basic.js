@@ -7,35 +7,61 @@ $(document).ready(function () {
 	var originalSpotX,
 			originalSpotY,
 			details = $("#product-details-container"),
-			modal = $("#modal");
+			modal = $("#modal"),
+			windowWidth = $(window).width(),
+			windowHeight = $(window).height();
 
 //arrange dots evenly around a circle
-	distributeDots();
+
+	if (windowWidth / windowHeight > 0.6) {
+		distributeDots();
+	} else {
+		$("#gear-container").addClass("hidden");
+	}
 
 
 //keep everything where it should be after resizing the window
-	$(window).on('resize', function () {
-		$('.big-dot').removeClass('big-dot');
-		if ($(window).width > 800) {
-			$('.swipe-here').addClass('hidden');
-		}
-		distributeDots();
+	var resizeTimer;
+
+	$(window).on('resize', function (e) {
+
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function () {
+
+			var windowWidth = $(window).width(),
+					windowHeight = $(window).height();
+			$('.big-dot').removeClass('big-dot');
+			if (windowWidth / windowHeight > 0.6) {
+				$(".dot-container h3, .pull-tab").hide();
+				distributeDots();
+				$("#gear-container").removeClass("hidden");
+			} else {
+				$(".dot-container h3, .pull-tab").show();
+				dot = $('.dot').css({
+					left: "",
+					top: ""
+				});
+				$("#gear-container").addClass("hidden");
+			}
+		}, 250);
+
 	});
 
-$("#modal").on("click", function () {
+
+	$("#modal").on("click", function () {
 		modal.addClass("hidden");
 		details.empty().addClass("hidden");
 		$(".current-dot").removeClass("current-dot");
 		putDotBack();
-		});	
-		
+	});
+
 //preview product image on small screens
-	$(".swipe-here").on("swipeleft", function() {
+	$(".swipe-here").on("swipeleft", function () {
 		putDotBack();
 		nextDotCounterClockwise();
 		moveDotToCorner();
 	});
-	$(".swipe-here").on("swiperight", function() {
+	$(".swipe-here").on("swiperight", function () {
 		putDotBack();
 		nextDotClockwise();
 		centerDot();
@@ -50,9 +76,9 @@ $("#modal").on("click", function () {
 			left: x + 'px',
 			top: y + 'px'
 		}, 250);
-	
+
 	}
-	
+
 	function moveProductImageToCorner() {
 		var width = $('.current-dot').width(),
 				x = 50 + width,
@@ -61,7 +87,7 @@ $("#modal").on("click", function () {
 			left: x + 'px',
 			top: y + 'px'
 		});
-	
+
 	}
 
 	function centerDot() {
@@ -85,17 +111,17 @@ $("#modal").on("click", function () {
 	}
 
 	function distributeDots() {
-		var gear = $("#gear-container"),
-				start = gear.offset(),
-				width = gear.width(),
+		var		width = $(window).width(),
+				height = $(window).height(),
 				dot = $('.dot'), //here "dot" is an array containing each element with the class dot
 				numberOfDots = dot.length, //the number of dots is equal to the length of the dots array
-				radius = width / 1.55,
+				dotRadius = dot.width() / 2,
+				radius = height / 3,
 				angle = 0,
 				step = (2 * Math.PI) / numberOfDots,
-				dotRadius = dot.width() / 2,
-				startX = start.left + width / 2,
-				startY = start.top + width / 2;
+				startX = width / 2,
+				startY = height / 2;
+		console.log(width + " " + startX);
 		dot.each(function () {
 			//equation of a circle
 			//x = originX + radius * cos(angle in radians, or angle plus step in this case)
@@ -106,12 +132,36 @@ $("#modal").on("click", function () {
 				left: x + 'px',
 				top: y + 'px'
 			});
-				if (angle > 4.36 && angle < 5.24) {
-					$(this).addClass('top-dot');
-				}
+
 			angle += step;
 		});
+//		function distributeDots() {
+//		var		gear = $("#gear-container"),
+//				start = gear.offset(),
+//				width = gear.width(),
+//				dot = $('.dot'), //here "dot" is an array containing each element with the class dot
+//				numberOfDots = dot.length, //the number of dots is equal to the length of the dots array
+//				radius = width / 1.55,
+//				angle = 0,
+//				step = (2 * Math.PI) / numberOfDots,
+//				dotRadius = dot.width() / 2,
+//				startX = start.left + width / 2,
+//				startY = start.top + width / 2;
+//		dot.each(function () {
+////equation of a circle
+//			//x = originX + radius * cos(angle in radians, or angle plus step in this case)
+//			//y = originY + radius * sin(angle in radians, or angle plus step in this case)
+//			var x = (startX + radius * Math.cos(angle)) - dotRadius,
+//					y = (startY + radius * Math.sin(angle)) - dotRadius;
+//			$(this).css({
+//				left: x + 'px',
+//				top: y + 'px'
+//			});
+//			angle += step;
+//		});
+//		});
 	}
+
 
 //there's got to be a way to simplify this so I don't need highlight.
 	function nextDotCounterClockwise() {
@@ -130,7 +180,8 @@ $("#modal").on("click", function () {
 			console.log("Location of current dot is x: " + here.left + " y: " + here.top);
 			originalSpotX = here.left;
 			originalSpotY = here.top;
-			};
+		}
+		;
 	}
 
 	function nextDotClockwise() {

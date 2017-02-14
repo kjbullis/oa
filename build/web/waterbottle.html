@@ -7,10 +7,13 @@ Copyright Kevin Bullis, All Rights Reserved
 		<title>&#214;&#258; Water Bottle</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/desktop.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	</head>
 	<body>
 		<div id="details">
+			<button id="add-cart" type="submit" form="paypal" value="Submit">
+				<img src="images/ic_add_shopping_cart_black_24px.svg" class="add-cart-button" alt="shopping cart">
+			</button>
 			<div id="description">
 				<h1 class="">&#214;&#258; Water Bottle</h1>
 				<p class="product-amount">$9.99 per bottle</p>
@@ -28,9 +31,6 @@ Copyright Kevin Bullis, All Rights Reserved
 					<img class="more-info-button" alt="More Info Icon" src="images/ic_info_black_24px.svg">
 				</div>
 			</a>	
-			<button id="add-cart" type="submit" form="paypal" value="Submit">
-				<img src="images/ic_add_shopping_cart_black_24px.svg" class="add-cart-button" alt="shopping cart">
-			</button>
 			<form id="paypal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">	
 				<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 				<input type="hidden" name="add" value="1">

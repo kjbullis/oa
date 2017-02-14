@@ -1,0 +1,55 @@
+/*
+Copyright Kevin Bullis, All Rights Reserved
+*/
+/* 
+    Created on : Feb 7, 2017, 4:38:14 PM
+    Author     : kevinbullis
+*/
+
+/*TESTIMONIALS PAGE*/
+	#testimonials {
+		padding: 2vh;
+		font-size: 2vh;
+		border: rgba( 31, 76, 89,1) ridge thin;	
+	}
+
+	.testimonial-intro {
+		font-size: 2vh;
+		font-style: italic;
+	}
+
+	blockquote {
+		border-bottom-style: solid;
+		border-bottom-width: thick;
+		border-bottom-color: rgba( 34, 106, 56, 1);
+	}
+
+	blockquote p {
+		color: rgba(143, 59, 46, 1);
+		font-size: smaller;
+		font-style: italic;
+		text-align: right;
+		padding-right: 10%;
+	}
+
+	blockquote img {
+		position: relative;
+		left: 50%; 
+		transform: translateX(-50%);
+		width: 30vh;
+		padding: 1.5vh;
+		margin: 3vh 0 3vh 0;
+		border-radius: 3px;
+		border: rgba( 31, 76, 89,1) ridge medium;
+	}
+
+	#description blockquote a {
+		border: none;
+		padding: 0;
+	}
+
+	figcaption {
+		color: rgba(143, 59, 46,1);
+		font-size: smaller;
+		text-align: center;
+	}

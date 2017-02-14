@@ -10,21 +10,27 @@ $(document).ready(function () {
 	enableLoadDetails();
 	enableHideDetails();
 	function enableLoadDetails() {
+//	When you click on a link inside the dots-container
 		container.find("a").click(function (event) {
 			event.stopPropagation();
 			var page = link.call(this);
-//	When you click on a link inside the dots-container
-//  Shrink any dot that's big already
-			$('.big-dot').removeClass('big-dot');
+//if the details section associated with this link is open, close it
+//otherwise, close the one that's open and open this one.
+
+//			$('.current-dot').next('.details').slideToggle();
+			$('.current-dot').removeClass('current-dot');
 //	Remove anything that's in the details container
 //  Load the page associated with that link into the details container
-			$(this).find('.dot').addClass('big-dot');
+			$(this).addClass('current-dot').next('.details').load(page, function(){
+				$(this).slideToggle();
+				$('html,body').animate({scrollTop: $('.current-dot').offset().top});
+			});
 			if ($('.big-dot').hasClass('top-dot')) {
 				$('.top-dot').css({
 					top: '6vh'
 				});
 			}
-			details.empty().load(page).show('fast');
+//			details.empty().load(page).show('fast');
 // Increase the size of the dot and position it just outside the details container
 			return false;
 		});
